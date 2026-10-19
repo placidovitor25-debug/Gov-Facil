@@ -6,7 +6,7 @@ const servicos = [
     {
         nome: "Segunda via do CPF",
         categoria: "Documentos",
-        descricao: "Consulte informações sobre a segunda via do CPF;",
+        descricao: "Consulte informações sobre a segunda via do CPF",
         link: "servico.html?servico=cpf"
     },
     {
