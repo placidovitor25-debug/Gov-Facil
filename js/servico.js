@@ -24,5 +24,9 @@ if (servico === "cpf") {
     document.getElementById("tituloServico").textContent = "Carteira de motorista";
 
     document.getElementById("descricaoServico").textContent = "Consulte informações sobre a carteira de motorista.";
+} else {
+    document.getElementById("tituloServico").textContent = "Serviço não encontrado";
+
+    document.getElementById("descricaoServico").textContent = "Serviço solicitado não existe ou não esta disponivel";
 }
 
