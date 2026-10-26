@@ -53,5 +53,8 @@ if (servico === "cpf") {
     document.getElementById("tituloServico").textContent = "Serviço não encontrado";
 
     document.getElementById("descricaoServico").textContent = "Serviço solicitado não existe ou não esta disponivel";
+    document.getElementById("comoSolicitar").textContent = "";
+    document.getElementById("linkOficial").hidden = true;
+    document.getElementById("documentosNecessarios").textContent = "";
 }
 
