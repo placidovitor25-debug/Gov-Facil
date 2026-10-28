@@ -42,7 +42,8 @@ botaoPesquisar.addEventListener("click", function() {
     const texto = campoBusca.value.toLowerCase();
 
     const resultado = servicos.filter(function(servico) {
-        return servico.nome.toLowerCase().includes(texto);
+        return servico.nome.toLowerCase().includes(texto) || 
+        servico.categoria.toLowerCase().includes(texto);
     });
     if (resultado.length > 0){
 
