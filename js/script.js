@@ -38,12 +38,23 @@ const servicos = [
 console.log(campoBusca);
 console.log(botaoPesquisar);
 
+function normalizarTexto(texto) {
+    return texto
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim();
+}
+
 function pesquisarServicos() {
-    const texto = campoBusca.value.toLowerCase().trim();
+    const texto = normalizarTexto(campoBusca.value);
 
     const resultado = servicos.filter(function(servico) {
-        return servico.nome.toLowerCase().includes(texto) || 
-        servico.categoria.toLowerCase().includes(texto);
+
+        const nome = normalizarTexto(servico.nome);  
+        const categoria = normalizarTexto(servico.categoria);
+
+        return nome.includes(texto) || categoria.includes(texto)
     });
     if (resultado.length > 0){
 
