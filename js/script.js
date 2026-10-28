@@ -38,8 +38,8 @@ const servicos = [
 console.log(campoBusca);
 console.log(botaoPesquisar);
 
-botaoPesquisar.addEventListener("click", function() {
-    const texto = campoBusca.value.toLowerCase();
+function pesquisarServicos() {
+    const texto = campoBusca.value.toLowerCase().trim();
 
     const resultado = servicos.filter(function(servico) {
         return servico.nome.toLowerCase().includes(texto) || 
@@ -65,10 +65,17 @@ botaoPesquisar.addEventListener("click", function() {
 
     }
     else{
-        resultadosBusca.innerHTML = "<p> nenhum servico encontrado </p>";
+        resultadosBusca.innerHTML = "<p>nenhum serviço encontrado.</p>";
 
     }
 
     console.log(resultado);
 
-});           
+}
+botaoPesquisar.addEventListener("click", pesquisarServicos);
+
+campoBusca.addEventListener("keydown", function(evento){
+    if (evento.key === "Enter") {
+        pesquisarServicos();
+    }
+});
