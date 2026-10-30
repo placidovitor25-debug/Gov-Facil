@@ -89,4 +89,10 @@ campoBusca.addEventListener("keydown", function(evento){
     if (evento.key === "Enter") {
         pesquisarServicos();
     }
+
+campoBusca.addEventListener("input", function(){
+    pesquisarServicos();
+
+});
+
 });
