@@ -46,6 +46,20 @@ function normalizarTexto(texto) {
     .trim();
 }
 
+function destacarTexto(nome,pesquisa){
+
+    const posicao =  nome.toLowerCase().indexOf(pesquisa.toLowerCase());
+
+    if (posicao === -1) {
+        return nome;
+    }
+
+    const inicio = nome.substring(0, posicao);
+    const encontrado = nome.substring(posicao, posicao + pesquisa.length);
+    const fim = nome.substring(posicao + pesquisa.length);
+    return `${inicio}<mark>${encontrado}</mark>${fim}`; 
+}
+
 function pesquisarServicos() {
     const texto = normalizarTexto(campoBusca.value);
 
@@ -63,7 +77,7 @@ function pesquisarServicos() {
         for (let i = 0; i < resultado.length ;i++){
             html = html + ` 
             <div class="card-servico">
-                <h3>${resultado[i].nome}</h3>
+                <h3>${destacarTexto(resultado[i].nome, campoBusca.value.trim())}</h3>
                 <p>${resultado[i].descricao}</p>
                 <p>Categoria: ${resultado[i].categoria}</p>
                 <a href="${resultado[i].link}" class="botao-servico"> 
