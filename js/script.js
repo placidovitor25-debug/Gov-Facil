@@ -48,10 +48,32 @@ function normalizarTexto(texto) {
 
 function destacarTexto(nome,pesquisa){
 
-    const posicao =  nome.toLowerCase().indexOf(pesquisa.toLowerCase());
+    const nomeNormalizado = normalizarTexto(nome);
+    const pesquisaNormalizada = normalizarTexto(pesquisa);
+
+    const posicao =  nomeNormalizado.indexOf(pesquisaNormalizada);
 
     if (posicao === -1) {
         return nome;
+    }
+
+    let posicaoOriginal = -1;
+    let caracteresEncontrados = 0;
+
+    for (let i = 0; i < nome.length; i++) {
+        const caractere = normalizarTexto(nome[i]);
+        if (caractere === pesquisaNormalizada[caracteresEncontrados]) {
+            if (caracteresEncontrados === 0) {
+                posicaoOriginal = i;
+            }
+            caracteresEncontrados++;
+            if (caracteresEncontrados === pesquisaNormalizada.length) {
+                break;
+            }
+        } else {
+            caracteresEncontrados = 0;
+            posicaoOriginal = -1;
+        }
     }
 
     const inicio = nome.substring(0, posicao);
