@@ -53,7 +53,7 @@ function destacarTexto(nome,pesquisa){
 
     const posicao =  nomeNormalizado.indexOf(pesquisaNormalizada);
 
-    if (posicao === -1) {
+    if (posicao === -1 || pesquisa.trim() === "") {
         return nome;
     }
 
