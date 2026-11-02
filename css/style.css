@@ -296,3 +296,82 @@ footer {
     font-size: 14px;
 }
 
+/* tablets */
+@media (max-width: 800px) {
+
+    #resultadoBusca {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .categorias {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+}
+
+/* celulares */
+@media (max-width: 600px) {
+
+    header {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .hero {
+        padding: 60px 20px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .busca {
+        flex-direction: column;
+        gap: 10px;
+        box-shadow: none;
+    }
+    
+    .busca input , .busca button {
+        width: 100%;
+        border-radius: 4px;
+    }
+
+    .servicos {
+        padding: 40px 20px;
+    }
+
+    #resultadoBusca {
+        grid-template-columns: 1fr;
+    }
+
+    .categorias {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-conteudo {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .footer-conteudo nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
